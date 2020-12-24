@@ -331,7 +331,6 @@ def show_venue(venue_id):
 #  ----------------------------------------------------------------
 @app.route('/venues/create', methods=['GET'])
 def create_venue_form():
-  #!!! not work form = VenueForm()!!!
   form = VenueForm()
   return render_template('forms/new_venue.html', form=form)
 
@@ -395,7 +394,6 @@ def delete_venue(venue_id):
 def artists():
   # TODO: replace with real data returned from querying the database
   data = []
-
   artists = Artist.query.all()
   for artist in artists:
     data.append({
@@ -560,7 +558,6 @@ def show_artist(artist_id):
 def edit_artist(artist_id):
   form = ArtistForm()
   artist = Artist.query.get(artist_id)
-
   artist_info = {
     "id": artist.id,
     "name": artist.name,
