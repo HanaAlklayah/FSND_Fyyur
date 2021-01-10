@@ -1,3 +1,12 @@
+'''
+#Some References {
+  https://stackabuse.com/using-sqlalchemy-with-flask-and-postgresql/
+  https://www.geeksforgeeks.org/crud-operations-on-postgres-using-async-database-in-python/
+  https://github.com/mahmoud-sharshar/Fyyur-Artist-Booking-Site
+  https://www.youtube.com/watch?v=XTpLbBJTOM4
+} 
+
+'''
 #----------------------------------------------------------------------------#
 # Imports
 #----------------------------------------------------------------------------#
@@ -116,6 +125,8 @@ def venues():
   #       num_shows should be aggregated based on number of upcoming shows per venue.
   data = []
   venues = Venue.query.all()
+  #A set ia an unordered collection data type with no duplicate elements.
+  #Reference from Udemy Course ---> Python Programming Beginners Tutorial : Python 3 Programming.
   i = set()
   for venue in venues:
     i.add((venue.city, venue.state))
